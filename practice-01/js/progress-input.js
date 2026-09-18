@@ -1,15 +1,40 @@
 "use strict";
 
-const totalTasks = 12;
-const completedTasks = 5;
+const totalTasksText = " 12 ";
+const completedTasksText = " 5 ";
 
-// Здесь разместите своё решение.
+if (totalTasksText === null || completedTasksText === null) {
+    console.log("Ошибка: получено значение null.");
+}
 
-if (typeof totalTasks === "string" || typeof completedTasks === "string") {
-    console.log("Ошибка: вместо числа передана строка.");
-} 
+else if (totalTasksText === undefined || completedTasksText === undefined) {
+    console.log("Ошибка: получено значение undefined.");
+}
 
-else if (!Number.isFinite(totalTasks) || !Number.isFinite(completedTasks)) {
+else if (
+    typeof totalTasksText !== "string" || typeof completedTasksText !== "string"
+) {
+    console.log("Ошибка: входные данные должны быть строками.");
+}
+
+else {
+    const totalTrimmed = totalTasksText.trim();
+    const completedTrimmed = completedTasksText.trim();
+
+    if (totalTrimmer === "" || completedTrimmed === "") {
+        console.log("Ошибка: пустая строка.");
+    }
+
+    else {
+
+        const totalTasks = Number(totalTrimmed);
+        const completedTasks = Number(completedTrimmed);
+
+        if (Number.isNaN(totalTasks) || Number.isNaN(completedTasks)) {
+            console.log("Ошибка: строка не является числом.");
+        }
+
+        else if (!Number.isFinite(totalTasks) || !Number.isFinite(completedTasks)) {
     console.log("Ошибка: недопустимое числовое значение.");
 } 
 
@@ -54,3 +79,6 @@ else {
         console.log(`Статус: ${status}`);
     }
 }
+    }
+}
+

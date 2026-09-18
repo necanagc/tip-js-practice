@@ -1,0 +1,23 @@
+"use strict";
+
+const plannedText = "8";
+const completedText = "3";
+const additionalText = "2";
+
+const planned = Number(plannedText);
+const completed = Number(completedText);
+const additional = Number(additionalText);
+
+const completedTotal = completed + additional;
+const remainingTasks = planned - completedTotal;
+
+console.log("Выполнено:", completedTotal);
+console.log("Осталось:", remainingTasks);
+
+let controlSum = 0;
+
+for (let taskNumber = 1; taskNumber <= 4; taskNumber += 1) {
+  controlSum += taskNumber;
+}
+
+console.log("Контрольная сумма:", controlSum);
